@@ -8,42 +8,47 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
   </head>
   <body>
-  <div class="container text-center my-4">
+      <div class="container">
+        <img src="poster.jpg" width="100%"/>
+        <h1>SERTIFIKAT SEMINAR DAN PELATIHAN</h1>
+        <h2>PENATALAKSANAAN PENYAKIT TELINGA HIDUNG TENGGOROK UNTUK DOKTER SE KABUPATEN PACITAN</h2>
 
-<h1>SERTIFIKAT SEMINAR DAN PELATIHAN</h1>
-<h2>PENATALAKSANAAN PENYAKIT TELINGA HIDUNG TENGGOROK UNTUK DOKTER SE KABUPATEN PACITAN</h2>
+        <p>Silahkan ketik di kolom pencarian kemudian klik download</p>  
+        <input id="myInput" type="text" placeholder="Search..">
+        <br><br>
 
-<p>Silahkan ketik di kolom pencarian kemudian klik download</p>  
-<input id="myInput" type="text" placeholder="Search..">
-<br><br>
+        <!-- Table  -->
+        <table class="table table bordered table-striped" id="testTable">
+          <!-- Table head -->
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama</th>
+              <th>Sertifikat</th>
+              <th>Sebagai</th>
+              <th>Download</th>
+            </tr>
+          </thead>
+          <!-- Table head -->
 
-    <!-- Table  -->
-    <table class="table table bordered table-striped" id="testTable">
-      <!-- Table head -->
-      <thead>
-        <tr>
-          <th>No</th>
-          <th>Nama</th>
-          <th>Sertifikat</th>
-          <th>Sebagai</th>
-          <th>Download</th>
-        </tr>
-      </thead>
-      <!-- Table head -->
+          <!-- Table body -->
+          <tbody id="demo">
 
-      <!-- Table body -->
-      <tbody id="demo">
+          
+          </tbody>
+          <!-- Table body -->
+        </table>
+        <!-- Table  -->
 
-      
-      </tbody>
-      <!-- Table body -->
-    </table>
-    <!-- Table  -->
+      </div>
 
-  </div>
-
-<div class="loading"></div>  
+      <div class="loading"></div>  
 <style>
+.container
+{
+  padding:20px 20px;
+}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
