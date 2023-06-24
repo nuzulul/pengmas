@@ -1,1 +1,219 @@
-# pengmas
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <base target="_top">
+    <link href="https://ssl.gstatic.com/docs/script/css/add-ons1.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+  <div class="container text-center my-4">
+
+<h1>SERTIFIKAT SEMINAR DAN PELATIHAN</h1>
+<h2>PENATALAKSANAAN PENYAKIT TELINGA HIDUNG TENGGOROK UNTUK DOKTER SE KABUPATEN PACITAN</h2>
+
+<p>Silahkan ketik di kolom pencarian kemudian klik download</p>  
+<input id="myInput" type="text" placeholder="Search..">
+<br><br>
+
+    <!-- Table  -->
+    <table class="table table bordered table-striped" id="testTable">
+      <!-- Table head -->
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Sertifikat</th>
+          <th>Sebagai</th>
+          <th>Download</th>
+        </tr>
+      </thead>
+      <!-- Table head -->
+
+      <!-- Table body -->
+      <tbody id="demo">
+
+      
+      </tbody>
+      <!-- Table body -->
+    </table>
+    <!-- Table  -->
+
+  </div>
+  
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+  
+<script>
+
+function CSVToArray( strData, strDelimiter ){
+        strDelimiter = (strDelimiter || ",");
+        var objPattern = new RegExp(
+            (
+                // Delimiters.
+                "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+
+                // Quoted fields.
+                "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+
+                // Standard fields.
+                "([^\"\\" + strDelimiter + "\\r\\n]*))"
+            ),
+            "gi"
+            );
+        var arrData = [[]];
+        var arrMatches = null;
+        while (arrMatches = objPattern.exec( strData )){
+            var strMatchedDelimiter = arrMatches[ 1 ];
+            if (
+                strMatchedDelimiter.length &&
+                strMatchedDelimiter !== strDelimiter
+                ){
+                arrData.push( [] );
+
+            }
+
+            var strMatchedValue;
+            if (arrMatches[ 2 ]){
+                strMatchedValue = arrMatches[ 2 ].replace(
+                    new RegExp( "\"\"", "g" ),
+                    "\""
+                    );
+
+            } else {
+                strMatchedValue = arrMatches[ 3 ];
+
+            }
+
+            arrData[ arrData.length - 1 ].push( strMatchedValue );
+        }
+        return( arrData );
+    }
+
+var sertifikatseminar = [];
+var sertifikatpelatihan = []; 
+var sertifikatpanitia = [];
+var seminar = false;
+var pelatihan = false;
+var panitia = false;
+var indextable = 1;
+var finish = false;     
+    
+$.get("https://script.google.com/macros/s/AKfycbz6Fit6-D_2PABn3zrpzydiGb9PogiqqBdItpx6XcPqrLhFjW0/exec?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2Fe%2F2PACX-1vQZqK-8lprXcslw30R6BtoyOjuOpbsGBQUJt73aJw8yAE005oqWdTA1lVO82I11-oKqA8KhS6bGCevM%2Fpub%3Fgid%3D1815959430%26single%3Dtrue%26output%3Dcsv", function(data, status){
+    var data = JSON.parse(data);
+    data = CSVToArray(data.contents);
+    //console.log(data);
+    data.forEach((arr,index)=>{
+            let nomor = arr[64];
+            let nama = arr[3];
+            let sertifikat = "SEMINAR";
+            let sebagai = "PESERTA";
+            let download = arr[69];
+            if (( index !== 0) && ( nama !== ''))
+            {
+              let item = {nomor,nama,sertifikat,sebagai,download}
+              sertifikatseminar.push(item);
+            }
+    });
+    seminar = true;
+    run();
+});
+
+$.get("https://script.google.com/macros/s/AKfycbz6Fit6-D_2PABn3zrpzydiGb9PogiqqBdItpx6XcPqrLhFjW0/exec?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2Fe%2F2PACX-1vRKI0MwFKsR1ppsX6xfl3L-L3GJQm7eT00Ojl3krtWu6vmcJDv146Cgl1C-H_Esgr7cBOc1h5H1urNk%2Fpub%3Fgid%3D1024104965%26single%3Dtrue%26output%3Dcsv", function(data, status){
+    var data = JSON.parse(data);
+    data = CSVToArray(data.contents);
+    //console.log(data);
+    data.forEach((arr,index)=>{
+            let nomor = arr[73];
+            let nama = arr[3];
+            let sertifikat = "PELATIHAN";
+            let sebagai = "PESERTA";
+            let download = arr[78];
+            if (( index !== 0) && ( nama !== ''))
+            {
+              let item = {nomor,nama,sertifikat,sebagai,download}
+              sertifikatpelatihan.push(item);
+            }
+    });
+    pelatihan = true;
+    run();
+});
+
+
+$.get("https://script.google.com/macros/s/AKfycbz6Fit6-D_2PABn3zrpzydiGb9PogiqqBdItpx6XcPqrLhFjW0/exec?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2Fe%2F2PACX-1vSe6srXsh6VB-xrzbA34o8tD0ExU8gPmtWpqJW7wIVSWxJ5Ek_wUY2-ymz3gyaLE3pp-JsJ1KFUVCKu%2Fpub%3Fgid%3D1178898805%26single%3Dtrue%26output%3Dcsv", function(data, status){
+    var data = JSON.parse(data);
+    data = CSVToArray(data.contents);
+    //console.log(data);
+    data.forEach((arr,index)=>{
+            let nomor = arr[6];
+            let nama = arr[2];
+            let sertifikat = arr[4];
+            let sebagai = arr[5];
+            //let download = arr[78];
+            if (arr[4] === 'SEMINAR') {var download = arr[10];}else{var download = arr[14];}
+            if (( index !== 0) && ( nama !== ''))
+            {
+              let item = {nomor,nama,sertifikat,sebagai,download}
+              sertifikatpanitia.push(item);
+            }
+    });
+    panitia = true;
+    run();
+});
+
+
+function run()
+{
+  if ((seminar)&&(pelatihan)&&(panitia)&&(!finish))
+  {
+    maketable(sertifikatseminar);
+    maketable(sertifikatpelatihan);
+    maketable(sertifikatpanitia);
+    finish = true;
+  }
+}
+
+function maketable(data)
+{
+  //console.log('ok');
+
+  data.forEach((item) => {
+    if (item.download === '') {var download ='<i>On Progress</i>'}else{var download = '<a href="'+item.download+'" target="_blank">Download</a>'}
+    let html = '<tr>'+'<td>'+indextable+'</td>'+'<td>'+item.nama+'</td>'+'<td>'+item.sertifikat+'</td>'+'<td>'+item.sebagai+'</td>'+'<td>'+download+'</td>'+'</tr>';
+    $('#demo').append(html);
+    indextable++;
+  });
+  
+}
+    
+    
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#demo tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+  </script>
+  
+
+  </body>
+</html>
