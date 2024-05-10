@@ -272,7 +272,7 @@ $.get("https://script.google.com/macros/s/AKfycbz6Fit6-D_2PABn3zrpzydiGb9PogiqqB
             let sertifikat = "SEMINAR";
             let sebagai = arr[3];
             let download = arr[7];
-			if (nama === "PENGMAS THT KL FK UNAIR SURABAYA")return
+			
             if (( index !== 0) && ( nama !== ''))
             {
               let item = {nomor,nama,sertifikat,sebagai,download}
@@ -300,6 +300,7 @@ function maketable(data)
   //console.log('ok');
 
   data.forEach((item) => {
+	if (item.nama === "PENGMAS THT KL FK UNAIR SURABAYA")return
     if (item.download === '') {var download ='<i>On Progress</i>'}else{var download = '<a href="'+item.download+'" target="_blank">Download</a>'}
     let html = '<tr>'+'<td>'+indextable+'</td>'+'<td>'+item.nama+'</td>'+'<td>'+item.sertifikat+'</td>'+'<td>'+item.sebagai+'</td>'+'<td>'+download+'</td>'+'</tr>';
     $('#demo').append(html);
