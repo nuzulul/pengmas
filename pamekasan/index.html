@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <base target="_top">
+    <link href="https://ssl.gstatic.com/docs/script/css/add-ons1.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <meta property="og:title" content="SERTIFIKAT PENGMAS FK UNAIR dan IDI cabang PAMEKASAN" />
+	<title>SERTIFIKAT PENGMAS FK UNAIR dan IDI cabang PAMEKASAN</title>
+  </head>
+  <body>
+      <div class="container">
+        <img src="poster.jpg" width="100%"/>
+        <h1>SERTIFIKAT PENGMAS FK UNAIR dan IDI cabang PAMEKASAN</h1>
+        <h2>Seminar Penatalaksanaan Abses Leher Dalam dan Benda Asing Aerodigestif pada Pelayanan Primer di Kabupaten Pamekasan Jawa Timur</h2>
+		<h3>Pamekasan 11 Mei 2024</h3>
+
+        <p>Silahkan ketik di kolom pencarian kemudian klik download</p>  
+        <input id="myInput" type="text" placeholder="Search..">
+        <br><br>
+
+        <!-- Table  -->
+        <table class="table table bordered table-striped" id="testTable">
+          <!-- Table head -->
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama</th>
+              <th>Sertifikat</th>
+              <th>Sebagai</th>
+              <th>Download</th>
+            </tr>
+          </thead>
+          <!-- Table head -->
+
+          <!-- Table body -->
+          <tbody id="demo">
+
+          
+          </tbody>
+          <!-- Table body -->
+        </table>
+        <!-- Table  -->
+
+      </div>
+
+      <div class="loading"></div>  
+
+<style>
+.pencarian{
+  display:none;
+}
+.container
+{
+  padding:20px 20px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: block; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+/* Absolute Center Spinner */
+.loading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: visible;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+  box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+</style>
+  
+<script>
+
+function CSVToArray( strData, strDelimiter ){
+        strDelimiter = (strDelimiter || ",");
+        var objPattern = new RegExp(
+            (
+                // Delimiters.
+                "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+
+                // Quoted fields.
+                "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+
+                // Standard fields.
+                "([^\"\\" + strDelimiter + "\\r\\n]*))"
+            ),
+            "gi"
+            );
+        var arrData = [[]];
+        var arrMatches = null;
+        while (arrMatches = objPattern.exec( strData )){
+            var strMatchedDelimiter = arrMatches[ 1 ];
+            if (
+                strMatchedDelimiter.length &&
+                strMatchedDelimiter !== strDelimiter
+                ){
+                arrData.push( [] );
+
+            }
+
+            var strMatchedValue;
+            if (arrMatches[ 2 ]){
+                strMatchedValue = arrMatches[ 2 ].replace(
+                    new RegExp( "\"\"", "g" ),
+                    "\""
+                    );
+
+            } else {
+                strMatchedValue = arrMatches[ 3 ];
+
+            }
+
+            arrData[ arrData.length - 1 ].push( strMatchedValue );
+        }
+        return( arrData );
+    }
+
+var sertifikatseminar = [];
+var sertifikatpelatihan = []; 
+var sertifikatpanitia = [];
+var seminar = false;
+var pelatihan = false;
+var panitia = false;
+var indextable = 1;
+var finish = false;     
+    
+$.get("https://script.google.com/macros/s/AKfycbz6Fit6-D_2PABn3zrpzydiGb9PogiqqBdItpx6XcPqrLhFjW0/exec?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2Fe%2F2PACX-1vQNKiAycYknpH-7LS0HxSR9g02LjkC4QID88jjKjb3qeSnbV8sm0iZwZQGVm48ib3hPB2dtJMyusTY5%2Fpub%3Fgid%3D0%26single%3Dtrue%26output%3Dcsv", function(data, status){
+    var data = JSON.parse(data);
+    data = CSVToArray(data.contents);
+    //console.log(data);
+    data.forEach((arr,index)=>{
+            let nomor = arr[4];
+            let nama = arr[2];
+            let sertifikat = "SEMINAR";
+            let sebagai = arr[3];
+            let download = arr[7];
+			if (nama === "PENGMAS THT KL FK UNAIR SURABAYA")return
+            if (( index !== 0) && ( nama !== ''))
+            {
+              let item = {nomor,nama,sertifikat,sebagai,download}
+              sertifikatseminar.push(item);
+            }
+    });
+    seminar = true;
+    run();
+});
+
+
+function run()
+{
+  if (seminar)
+  {
+    maketable(sertifikatseminar);
+    finish = true;
+    $('.loading').hide();
+    pencarian();
+  }
+}
+
+function maketable(data)
+{
+  //console.log('ok');
+
+  data.forEach((item) => {
+    if (item.download === '') {var download ='<i>On Progress</i>'}else{var download = '<a href="'+item.download+'" target="_blank">Download</a>'}
+    let html = '<tr>'+'<td>'+indextable+'</td>'+'<td>'+item.nama+'</td>'+'<td>'+item.sertifikat+'</td>'+'<td>'+item.sebagai+'</td>'+'<td>'+download+'</td>'+'</tr>';
+    $('#demo').append(html);
+    indextable++;
+  });
+  
+}
+
+function pencarian()
+{
+  var getParams = function (url) {
+    var params = {};
+    var parser = document.createElement('a');
+    parser.href = url;
+    var query = parser.search.substring(1);
+    var vars = query.split('&');
+    for (var i = 0; i < vars.length; i++) {
+      var pair = vars[i].split('=');
+      params[pair[0]] = decodeURIComponent(pair[1]);
+    }
+    return params;
+  };
+  var params = getParams(window.location.href);
+  //console.log(params.sertifikat);
+  if (params.sertifikat != undefined)
+  {
+    //console.log('ok');
+    if (params.sertifikat === 'seminar')
+    {
+      runpencarian(sertifikatseminar,params.nomor);
+    }
+    else if (params.sertifikat === 'pelatihan')
+    {
+      runpencarian(sertifikatpelatihan,params.nomor);
+    }
+    else if (params.sertifikat === 'panitia')
+    {
+      runpencarian(sertifikatpanitia,params.nomor);
+    }
+  }else if (params.nomor != undefined)
+  {
+	runpencarian(sertifikatseminar,params.nomor);
+  }
+}
+
+function runpencarian(sertifikat,nomor)
+{
+  sertifikat.forEach((item)=>{
+    if(item.nomor === nomor)
+    {
+      let data = "<h1>DATA QR CODE SERTIFIKAT</h1>"+
+                 "<p>NAMA : "+item.nama+"</p>"+
+                 "<p>SERTIFIKAT : "+item.sertifikat+" PENGMAS FK UNAIR dan IDI cabang PAMEKASAN</p>"+
+                 "<p>SEBAGAI : "+item.sebagai+"</p>";
+      showinfo(data);
+    }
+  })
+}
+
+function showinfo(data)
+{
+      $('body').append('<div id="showinfo" class="overlay" onclick=""><div style="width:100%;max-height:90%;background:white;padding:20px 20px;overflow:scroll;word-wrap: break-word;position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"><center>'+data+'</br></br><button id="showinfoclose" onclick="" class="button" style="width: 100px; height: 40px margin: 0 auto; border-radius: 4px;">CLOSE</button></center></div></div>');
+      $("#showinfoclose").click(function(){
+            $('#showinfo').remove();
+      }); 
+}
+    
+    
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#demo tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+  </script>
+  
+
+  </body>
+</html>
